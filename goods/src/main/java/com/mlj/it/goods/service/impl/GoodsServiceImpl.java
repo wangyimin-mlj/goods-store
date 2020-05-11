@@ -21,7 +21,7 @@ public class GoodsServiceImpl implements GoodsService {
         goods.setAddTime(new Date());
         Goods saveGood = goodsRepository.save(goods);
         log.info(saveGood.toString());
-        return
+        return 1;
     }
 
     @Override
