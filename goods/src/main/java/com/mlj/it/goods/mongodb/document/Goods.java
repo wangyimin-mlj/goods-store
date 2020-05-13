@@ -1,85 +1,34 @@
 package com.mlj.it.goods.mongodb.document;
 
 import com.mongodb.lang.NonNull;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
-//商品表
-@Document
-public class Goods {
+/**
+ * 商品表
+ */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Document("goods")
+public class Goods implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     @Id
-    @NonNull
     private String goodsSn;
-    @NonNull
+
     private String name;
 
-    //TODO 复杂分类
-    private String categoryId;
-    private Boolean isOnSale;
-    private Date addTime;
-    private String price;
+    private List<Category> categoryList;
+    // private List<Spec> specList;
+    private List<String> imgs;
 
-    @NonNull
-    public String getGoodsSn() {
-        return goodsSn;
-    }
-
-    public void setGoodsSn(@NonNull String goodsSn) {
-        this.goodsSn = goodsSn;
-    }
-
-    @NonNull
-    public String getName() {
-        return name;
-    }
-
-    public void setName(@NonNull String name) {
-        this.name = name;
-    }
-
-    public String getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(String categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public Boolean getOnSale() {
-        return isOnSale;
-    }
-
-    public void setOnSale(Boolean onSale) {
-        isOnSale = onSale;
-    }
-
-    public Date getAddTime() {
-        return addTime;
-    }
-
-    public void setAddTime(Date addTime) {
-        this.addTime = addTime;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return "Goods{" +
-                "goodsSn='" + goodsSn + '\'' +
-                ", name='" + name + '\'' +
-                ", categoryId='" + categoryId + '\'' +
-                ", isOnSale=" + isOnSale +
-                ", addTime=" + addTime +
-                ", price='" + price + '\'' +
-                '}';
-    }
 }

@@ -9,5 +9,5 @@ public interface GoodsService {
 
     int delete(List<String> ids);
 
-    List<Goods> list(String name);
+    List<Goods> list();
 }
