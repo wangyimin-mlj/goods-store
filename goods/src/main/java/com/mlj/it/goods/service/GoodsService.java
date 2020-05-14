@@ -1,13 +1,23 @@
 package com.mlj.it.goods.service;
 
 import com.mlj.it.goods.mongodb.document.Goods;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
 public interface GoodsService {
-    int create(Goods goods);
+    Goods create(Goods goods);
 
-    int delete(List<String> ids);
+    int deleteByIds(List<String> ids);
 
-    List<Goods> list();
+    int deleteById(String id);
+
+    List<Goods> findAll();
+
+    Goods findOne();
+
+    Page<Goods> findAllByCon();
+
+    Boolean updateBatchByGoods(List<Goods> goods);
+
 }

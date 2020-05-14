@@ -6,3 +6,11 @@ spring:
       host: localhost
       port: 27017
       database: goods-library
+      #打印日志
+      core: DEBUG
+      #
+      auto-index-creation: false
+
+
+
+
