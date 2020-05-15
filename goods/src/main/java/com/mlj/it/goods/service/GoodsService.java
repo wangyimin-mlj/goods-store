@@ -6,6 +6,8 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 
 public interface GoodsService {
+    long count();
+
     Goods create(Goods goods);
 
     int deleteByIds(List<String> ids);
@@ -18,6 +20,6 @@ public interface GoodsService {
 
     Page<Goods> findAllByCon();
 
-    Boolean updateBatchByGoods(List<Goods> goods);
+    Boolean updateBatchByGoodIds(List<String> ids);
 
 }

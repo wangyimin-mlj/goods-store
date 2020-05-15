@@ -12,10 +12,4 @@ import java.util.List;
  *  商品
  */
 public interface GoodsRepository extends MongoRepository<Goods, String> {
-    /**
-     * 分页所有数据
-     */
-    Page<Goods> findAll(Pageable pagebal);
-
-
 }

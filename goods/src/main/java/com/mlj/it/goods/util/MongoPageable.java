@@ -11,7 +11,7 @@ public class MongoPageable implements Pageable {
     private Integer pagenumber = 1;
     // 当前页面条数
     private Integer pagesize = 2;
-    //排序条件
+    // 排序条件
     private Sort sort;
 
     public Integer getPagenumber() {

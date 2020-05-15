@@ -19,8 +19,20 @@ public class GoodsServiceImpl implements GoodsService {
     private GoodsRepository goodsRepository;
 
     @Override
+    public long count() {
+        long count = goodsRepository.count();
+        return count;
+    }
+
+    @Override
     public Goods create(Goods goods) {
-        Goods insert = goodsRepository.insert(goods);
+        Goods insert = null;
+        try{
+            insert = goodsRepository.insert(goods);
+        } catch (Exception e){
+            String message = e.getMessage();
+            log.info(message);
+        }
 
         return insert;
     }
@@ -63,8 +75,14 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-    public Boolean updateBatchByGoods(List<Goods> goods) {
-        return null;
+    public Boolean updateBatchByGoodIds(List<String> ids) {
+        Iterable<Goods> allById = goodsRepository.findAllById(ids);
+        for(Goods goods : allById){
+            goods.setIsDel(2);
+        }
+        goodsRepository.saveAll(allById);
+        
+        return true;
     }
 
 
