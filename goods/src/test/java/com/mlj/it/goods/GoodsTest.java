@@ -34,8 +34,8 @@ public class GoodsTest {
         categoryList.add(new Category("1122233",2));
 
         Goods goods = new Goods();
-        goods.setGoodsSn("123123");
-        goods.setName("vvvtttt");
+        goods.setGoodsSn("123124");
+        goods.setName("vvvttttt");
         goods.setCategoryList(categoryList);
         goods.setImgs(imgs);
         goods.setPrice(99);
@@ -62,7 +62,7 @@ public class GoodsTest {
 
         Goods goods = new Goods();
         goods.setGoodsSn("343453535");
-        goods.setName("yym");
+        goods.setName("yym1");
         goods.setCategoryList(categoryList);
         goods.setImgs(imgs);
         goods.setPrice(150);
