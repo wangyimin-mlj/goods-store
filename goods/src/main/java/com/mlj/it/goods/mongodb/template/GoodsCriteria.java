@@ -122,7 +122,6 @@ public class GoodsCriteria {
         return this;
     }
 
-
     //name
     public GoodsCriteria andNameEqualTo(String value) {
         if (value == null) {

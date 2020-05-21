@@ -12,5 +12,5 @@ import java.util.List;
  *  商品
  */
 public interface GoodsRepository extends MongoRepository<Goods, String> {
-    List<Goods> findAllByPriceIsOrderByIdAscGoodsSnAscGoodsSnDesc();
+
 }

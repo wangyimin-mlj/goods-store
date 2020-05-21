@@ -52,6 +52,7 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public int deleteById(String id) {
+        goodsRepository.deleteById(id);
         return 0;
     }
 
@@ -143,7 +144,6 @@ public class GoodsServiceImpl implements GoodsService {
 
         List<Goods> goods = mongoTemplate.find(query, Goods.class);
         return goods;
-
 
     }
 }
